@@ -1,492 +1,760 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentina Fresia · Software Developer</title>
-<meta name="description" content="Portfolio de Valentina Fresia, desarrolladora de software junior en Tucumán, Argentina.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy-deep: #1B2740;
-    --navy: #2E3E5C;
-    --cream: #F7F3EB;
-    --card: #FFFDF8;
-    --border: #E4DCC8;
-    --gold: #BF9B5E;
-    --gold-soft: #E7D8B8;
-    --ink-soft: #5B6478;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentina Fresia · Software Developer</title>
+    <meta
+      name="description"
+      content="Portfolio de Valentina Fresia, desarrolladora de software junior en Tucumán, Argentina."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy-deep: #1b2740;
+        --navy: #2e3e5c;
+        --cream: #f7f3eb;
+        --card: #fffdf8;
+        --border: #e4dcc8;
+        --gold: #bf9b5e;
+        --gold-soft: #e7d8b8;
+        --ink-soft: #5b6478;
+      }
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  html{ scroll-behavior:smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-  body{
-    background:var(--cream);
-    color:var(--navy-deep);
-    font-family:'Sora', sans-serif;
-    font-weight:400;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+      body {
+        background: var(--cream);
+        color: var(--navy-deep);
+        font-family: "Sora", sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
 
-  .wrap{
-    max-width:920px;
-    margin:0 auto;
-    padding:0 28px;
-  }
+      .wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
 
-  a{ color:inherit; text-decoration:none; }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-  ::selection{ background:var(--gold-soft); color:var(--navy-deep); }
+      ::selection {
+        background: var(--gold-soft);
+        color: var(--navy-deep);
+      }
 
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(247,243,235,0.86);
-    backdrop-filter: blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-  nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding-top:16px; padding-bottom:16px;
-  }
-  .brand{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.05rem;
-    letter-spacing:0.01em;
-  }
-  .navlinks{ display:flex; gap:28px; font-size:0.88rem; color:var(--navy); }
-  .navlinks a{ position:relative; padding:2px 0; }
-  .navlinks a::after{
-    content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px;
-    background:var(--gold); transition:width .25s ease;
-  }
-  .navlinks a:hover::after{ width:100%; }
+      /* ---------- NAV ---------- */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(247, 243, 235, 0.86);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+      .brand {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 1.05rem;
+        letter-spacing: 0.01em;
+      }
+      .navlinks {
+        display: flex;
+        gap: 28px;
+        font-size: 0.88rem;
+        color: var(--navy);
+      }
+      .navlinks a {
+        position: relative;
+        padding: 2px 0;
+      }
+      .navlinks a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: width 0.25s ease;
+      }
+      .navlinks a:hover::after {
+        width: 100%;
+      }
 
-  /* ---------- HERO ---------- */
-  header.hero{
-    padding:72px 0 56px;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns: 220px 1fr;
-    gap:44px;
-    align-items:center;
-  }
-  .photo-frame{
-    width:220px; height:220px;
-    border-radius:50%;
-    overflow:hidden;
-    border:1px solid var(--border);
-    box-shadow: 0 1px 0 var(--gold-soft), 0 18px 40px -20px rgba(27,39,64,0.35);
-  }
-  .photo-frame img{
-    width:100%; height:100%; object-fit:cover; display:block;
-  }
-  .eyebrow{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem;
-    color:var(--gold);
-    letter-spacing:0.06em;
-    display:flex; align-items:center; gap:8px;
-    margin-bottom:14px;
-  }
-  .eyebrow .dot{
-    width:7px; height:7px; border-radius:50%; background:var(--gold);
-    box-shadow:0 0 0 3px var(--gold-soft);
-  }
-  h1{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:clamp(2.3rem, 5vw, 3.1rem);
-    line-height:1.05;
-    letter-spacing:-0.01em;
-    color:var(--navy-deep);
-  }
-  h1 em{ font-style:italic; color:var(--gold); font-weight:500; }
-  .role{
-    margin-top:10px;
-    font-size:1.05rem;
-    color:var(--navy);
-    font-weight:500;
-  }
-  .bio{
-    margin-top:18px;
-    max-width:56ch;
-    color:var(--ink-soft);
-    font-size:0.98rem;
-  }
-  .hero-actions{
-    margin-top:26px;
-    display:flex; flex-wrap:wrap; gap:12px;
-  }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:11px 20px;
-    border-radius:999px;
-    font-size:0.88rem; font-weight:500;
-    border:1px solid var(--navy-deep);
-    transition:transform .18s ease, background .18s ease, color .18s ease;
-  }
-  .btn-solid{ background:var(--navy-deep); color:var(--cream); }
-  .btn-solid:hover{ background:var(--gold); border-color:var(--gold); color:var(--navy-deep); transform:translateY(-1px); }
-  .btn-ghost{ background:transparent; color:var(--navy-deep); }
-  .btn-ghost:hover{ background:var(--navy-deep); color:var(--cream); transform:translateY(-1px); }
+      /* ---------- HERO ---------- */
+      header.hero {
+        padding: 72px 0 56px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 44px;
+        align-items: center;
+      }
+      .photo-frame {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow:
+          0 1px 0 var(--gold-soft),
+          0 18px 40px -20px rgba(27, 39, 64, 0.35);
+      }
+      .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .eyebrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--gold);
+        letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      .eyebrow .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 0 3px var(--gold-soft);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: clamp(2.3rem, 5vw, 3.1rem);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        color: var(--navy-deep);
+      }
+      h1 em {
+        font-style: italic;
+        color: var(--gold);
+        font-weight: 500;
+      }
+      .role {
+        margin-top: 10px;
+        font-size: 1.05rem;
+        color: var(--navy);
+        font-weight: 500;
+      }
+      .bio {
+        margin-top: 18px;
+        max-width: 56ch;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+      }
+      .hero-actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 20px;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        border: 1px solid var(--navy-deep);
+        transition:
+          transform 0.18s ease,
+          background 0.18s ease,
+          color 0.18s ease;
+      }
+      .btn-solid {
+        background: var(--navy-deep);
+        color: var(--cream);
+      }
+      .btn-solid:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy-deep);
+        transform: translateY(-1px);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--navy-deep);
+      }
+      .btn-ghost:hover {
+        background: var(--navy-deep);
+        color: var(--cream);
+        transform: translateY(-1px);
+      }
 
-  /* terminal signature line */
-  .terminal{
-    margin-top:34px;
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.82rem;
-    color:var(--navy);
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:10px;
-    padding:14px 18px;
-    max-width:fit-content;
-    overflow:hidden;
-    white-space:nowrap;
-  }
-  .terminal .prompt{ color:var(--gold); }
-  .terminal .caret{
-    display:inline-block; width:7px; height:1em; background:var(--navy-deep);
-    margin-left:2px; vertical-align:text-bottom;
-    animation:blink 1s steps(1) infinite;
-  }
-  @keyframes blink{ 50%{ opacity:0; } }
+      /* terminal signature line */
+      .terminal {
+        margin-top: 34px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.82rem;
+        color: var(--navy);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 18px;
+        max-width: fit-content;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .terminal .prompt {
+        color: var(--gold);
+      }
+      .terminal .caret {
+        display: inline-block;
+        width: 7px;
+        height: 1em;
+        background: var(--navy-deep);
+        margin-left: 2px;
+        vertical-align: text-bottom;
+        animation: blink 1s steps(1) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
 
-  /* ---------- SECTION SHELL ---------- */
-  section{ padding:52px 0; border-top:1px solid var(--border); }
-  .section-head{
-    display:flex; align-items:baseline; gap:14px; margin-bottom:28px;
-  }
-  .section-num{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem; color:var(--gold);
-  }
-  h2{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:1.5rem;
-    color:var(--navy-deep);
-  }
-  .section-sub{
-    font-size:0.88rem; color:var(--ink-soft);
-    margin-top:-18px; margin-bottom:26px;
-  }
+      /* ---------- SECTION SHELL ---------- */
+      section {
+        padding: 52px 0;
+        border-top: 1px solid var(--border);
+      }
+      .section-head {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+      .section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--gold);
+      }
+      h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: var(--navy-deep);
+      }
+      .section-sub {
+        font-size: 0.88rem;
+        color: var(--ink-soft);
+        margin-top: -18px;
+        margin-bottom: 26px;
+      }
 
-  /* ---------- SKILLS ---------- */
-  .skill-groups{ display:grid; gap:20px; }
-  .skill-group{ display:flex; gap:16px; flex-wrap:wrap; align-items:baseline; }
-  .skill-label{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.75rem; color:var(--ink-soft);
-    min-width:150px;
-  }
-  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
-  .chip{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem;
-    padding:6px 12px;
-    border-radius:6px;
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--navy);
-  }
+      /* ---------- SKILLS ---------- */
+      .skill-groups {
+        display: grid;
+        gap: 20px;
+      }
+      .skill-group {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: baseline;
+      }
+      .skill-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--ink-soft);
+        min-width: 150px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chip {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--navy);
+      }
 
-  /* ---------- PROJECTS ---------- */
-  .projects{ display:grid; gap:20px; }
-  .project-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:26px 28px;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .project-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 20px 40px -28px rgba(27,39,64,0.45);
-  }
-  .project-top{
-    display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;
-  }
-  .project-title{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:1.2rem;
-    color:var(--navy-deep);
-  }
-  .project-desc{
-    margin-top:10px; color:var(--ink-soft); font-size:0.94rem; max-width:60ch;
-  }
-  .project-tags{ display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
-  .tag{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.72rem; color:var(--gold);
-    background:var(--gold-soft);
-    padding:3px 9px; border-radius:5px;
-  }
-  .project-links{ display:flex; gap:16px; margin-top:16px; }
-  .project-links a{
-    font-size:0.86rem; font-weight:500; color:var(--navy-deep);
-    border-bottom:1px solid var(--gold); padding-bottom:1px;
-  }
-  .project-links a:hover{ color:var(--gold); }
+      /* ---------- PROJECTS ---------- */
+      .projects {
+        display: grid;
+        gap: 20px;
+      }
+      .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 26px 28px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px -28px rgba(27, 39, 64, 0.45);
+      }
+      .project-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .project-title {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: var(--navy-deep);
+      }
+      .project-desc {
+        margin-top: 10px;
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+        max-width: 60ch;
+      }
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 14px;
+      }
+      .tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+        color: var(--gold);
+        background: var(--gold-soft);
+        padding: 3px 9px;
+        border-radius: 5px;
+      }
+      .project-links {
+        display: flex;
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .project-links a {
+        font-size: 0.86rem;
+        font-weight: 500;
+        color: var(--navy-deep);
+        border-bottom: 1px solid var(--gold);
+        padding-bottom: 1px;
+      }
+      .project-links a:hover {
+        color: var(--gold);
+      }
 
-  .project-card.placeholder{
-    display:flex; align-items:center; justify-content:center;
-    min-height:96px;
-    border-style:dashed;
-    color:var(--ink-soft);
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.82rem;
-    text-align:center;
-  }
+      .project-card.placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 96px;
+        border-style: dashed;
+        color: var(--ink-soft);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.82rem;
+        text-align: center;
+      }
 
-  /* ---------- FORMACIÓN ---------- */
-  .edu-list{ display:grid; gap:16px; }
-  .edu-item{
-    display:grid; grid-template-columns: 170px 1fr; gap:16px;
-  }
-  .edu-inst{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.76rem; color:var(--gold);
-  }
-  .edu-name{ font-weight:500; color:var(--navy-deep); font-size:0.98rem; }
+      /* ---------- FORMACIÓN ---------- */
+      .edu-list {
+        display: grid;
+        gap: 16px;
+      }
+      .edu-item {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: 16px;
+      }
+      .edu-inst {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.76rem;
+        color: var(--gold);
+      }
+      .edu-name {
+        font-weight: 500;
+        color: var(--navy-deep);
+        font-size: 0.98rem;
+      }
 
-  /* ---------- CONTACT / FOOTER ---------- */
-  footer{
-    padding:56px 0 60px;
-    border-top:1px solid var(--border);
-  }
-  .contact-title{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:1.9rem;
-    max-width:14ch;
-    color:var(--navy-deep);
-    margin-bottom:26px;
-  }
-  .contact-grid{
-    display:flex; flex-wrap:wrap; gap:14px 40px;
-    margin-bottom:30px;
-  }
-  .contact-item{ font-size:0.92rem; }
-  .contact-item .k{
-    display:block; font-family:'JetBrains Mono', monospace;
-    font-size:0.7rem; color:var(--ink-soft); margin-bottom:4px;
-  }
-  .contact-item .v{ color:var(--navy-deep); font-weight:500; }
-  .contact-item a:hover{ color:var(--gold); }
-  .foot-bottom{
-    display:flex; justify-content:space-between; align-items:center;
-    flex-wrap:wrap; gap:12px;
-    padding-top:24px; border-top:1px solid var(--border);
-    font-size:0.78rem; color:var(--ink-soft);
-  }
-  .foot-socials{ display:flex; gap:18px; }
-  .foot-socials a{ font-weight:500; color:var(--navy); }
-  .foot-socials a:hover{ color:var(--gold); }
+      /* ---------- CONTACT / FOOTER ---------- */
+      footer {
+        padding: 56px 0 60px;
+        border-top: 1px solid var(--border);
+      }
+      .contact-title {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 1.9rem;
+        max-width: 14ch;
+        color: var(--navy-deep);
+        margin-bottom: 26px;
+      }
+      .contact-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 40px;
+        margin-bottom: 30px;
+      }
+      .contact-item {
+        font-size: 0.92rem;
+      }
+      .contact-item .k {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--ink-soft);
+        margin-bottom: 4px;
+      }
+      .contact-item .v {
+        color: var(--navy-deep);
+        font-weight: 500;
+      }
+      .contact-item a:hover {
+        color: var(--gold);
+      }
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+      }
+      .foot-socials {
+        display: flex;
+        gap: 18px;
+      }
+      .foot-socials a {
+        font-weight: 500;
+        color: var(--navy);
+      }
+      .foot-socials a:hover {
+        color: var(--gold);
+      }
 
-  @media (max-width: 640px){
-    .hero-grid{ grid-template-columns:1fr; text-align:left; }
-    .photo-frame{ width:150px; height:150px; }
-    .navlinks{ display:none; }
-    .edu-item{ grid-template-columns:1fr; gap:4px; }
-    .terminal{ white-space:normal; max-width:100%; }
-  }
+      @media (max-width: 640px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+        .photo-frame {
+          width: 150px;
+          height: 150px;
+        }
+        .navlinks {
+          display: none;
+        }
+        .edu-item {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+        .terminal {
+          white-space: normal;
+          max-width: 100%;
+        }
+      }
 
-  @media (prefers-reduced-motion: reduce){
-    *{ animation:none !important; transition:none !important; }
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="wrap">
-    <span class="brand">Valentina Fresia</span>
-    <div class="navlinks">
-      <a href="#proyectos">Proyectos</a>
-      <a href="#skills">Stack</a>
-      <a href="#formacion">Formación</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div class="photo-frame">
-      <img src="foto.jpg" alt="Foto de Valentina Fresia">
-    </div>
-    <div>
-      <div class="eyebrow"><span class="dot"></span>SAN MIGUEL DE TUCUMÁN, ARGENTINA</div>
-      <h1>Valentina<br>Fresia</h1>
-      <p class="role">Software Developer Junior</p>
-      <p class="bio">De QA automation a desarrollo full stack. Construyo interfaces con React y JavaScript, y uso Playwright y IA como parte natural de mi flujo de trabajo. Actualmente sumando backend y proyectos propios de punta a punta.</p>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="#proyectos">Ver proyectos</a>
-        <a class="btn btn-ghost" href="CV_Valentina_Fresia.pdf" download>Descargar CV</a>
-      </div>
-      <div class="terminal"><span class="prompt">&gt;</span> const dev = { stack: "JS · React · Node", modo: "aprendiendo y construyendo" }<span class="caret"></span></div>
-    </div>
-  </div>
-</header>
-
-<section id="proyectos">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">01</span>
-      <h2>Proyectos</h2>
-    </div>
-    <p class="section-sub">Algunos de los que voy armando. Esta lista crece.</p>
-
-    <div class="projects">
-
-      <div class="project-card">
-        <div class="project-top">
-          <div class="project-title">Colorfly Studio</div>
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <span class="brand">Valentina Fresia</span>
+        <div class="navlinks">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#skills">Stack</a>
+          <a href="#formacion">Formación</a>
+          <a href="#contacto">Contacto</a>
         </div>
-        <p class="project-desc">Herramienta web para generar paletas de colores aleatorias en formato HEX y HSL, pensada para diseño y desarrollo frontend. Incluye soporte de accesibilidad y feedback visual en tiempo real.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://valefresia.github.io/ProyectoM1_valentinaFresia-/" target="_blank" rel="noopener">Ver proyecto →</a>
-          <a href="https://github.com/valefresia/ProyectoM1_valentinaFresia-" target="_blank" rel="noopener">Ver código →</a>
-        </div>
       </div>
+    </nav>
 
-      <div class="project-card">
-        <div class="project-top">
-          <div class="project-title">API REST con documentación Swagger</div>
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div class="photo-frame">
+          <img
+            src="/valefresia.github.io/foto_cream_full.png"
+            alt="Foto de Valentina Fresia"
+          />
         </div>
-        <p class="project-desc">Backend con API REST desplegado en Railway, documentado con Swagger/OpenAPI. Incluye diseño de endpoints, validaciones y manejo de errores.</p>
-        <div class="project-tags">
-          <span class="tag">Node.js</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Swagger</span>
-        </div>
-        <div class="project-links">
-          <a href="https://proyectom2valentinafresia-production.up.railway.app/api-docs/" target="_blank" rel="noopener">Ver documentación →</a>
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span>SAN MIGUEL DE TUCUMÁN, ARGENTINA
+          </div>
+          <h1>Valentina Fresia</h1>
+          <p class="role">Software Developer Junior</p>
+          <p class="bio">
+            Desarrolladora Web Frontend Junior, con formación en desarrollo de
+            interfaces web utilizando Angular, React, JavaScript, TypeScript,
+            HTML y CSS. Experiencia en proyectos académicos y colaborativos,
+            aplicando metodologías ágiles. Perfil proactivo, con capacidad de
+            adaptación y enfoque en la mejora continua.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#proyectos">Ver proyectos</a>
+            <a
+              class="btn btn-ghost"
+              href="/valefresia.github.io/Valentina Fresia Curriculum.pdf"
+              download
+              >Descargar CV</a
+            >
+          </div>
+          <div class="terminal">
+            <span class="prompt">&gt;</span> const dev = { stack: "JS · React ·
+            Node", modo: "aprendiendo y construyendo" }<span
+              class="caret"
+            ></span>
+          </div>
         </div>
       </div>
+    </header>
 
-      <div class="project-card placeholder">
-        + Próximo proyecto en camino
-      </div>
+    <section id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <h2>Proyectos</h2>
+        </div>
+        <p class="section-sub">
+          Algunos de los que voy armando. Esta lista crece.
+        </p>
 
-    </div>
-  </div>
-</section>
+        <div class="projects">
+          <div class="project-card">
+            <div class="project-top">
+              <div class="project-title">Colorfly Studio</div>
+            </div>
+            <p class="project-desc">
+              Herramienta web para generar paletas de colores aleatorias en
+              formato HEX y HSL, pensada para diseño y desarrollo frontend.
+              Incluye soporte de accesibilidad y feedback visual en tiempo real.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://valefresia.github.io/ProyectoM1_valentinaFresia-/"
+                target="_blank"
+                rel="noopener"
+                >Ver proyecto →</a
+              >
+              <a
+                href="https://github.com/valefresia/ProyectoM1_valentinaFresia-"
+                target="_blank"
+                rel="noopener"
+                >Ver código →</a
+              >
+            </div>
+          </div>
 
-<section id="skills">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">02</span>
-      <h2>Stack</h2>
-    </div>
-    <div class="skill-groups">
-      <div class="skill-group">
-        <span class="skill-label">Frontend</span>
-        <div class="chips">
-          <span class="chip">JavaScript</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">React</span>
-          <span class="chip">Angular</span>
-          <span class="chip">HTML/CSS</span>
+          <div class="project-card">
+            <div class="project-top">
+              <div class="project-title">
+                API REST con documentación Swagger
+              </div>
+            </div>
+            <p class="project-desc">
+              Backend con API REST desplegado en Railway, documentado con
+              Swagger/OpenAPI. Incluye diseño de endpoints, validaciones y
+              manejo de errores.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Swagger</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://proyectom2valentinafresia-production.up.railway.app/api-docs/"
+                target="_blank"
+                rel="noopener"
+                >Ver documentación →</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card placeholder">
+            + Próximo proyecto en camino
+          </div>
         </div>
       </div>
-      <div class="skill-group">
-        <span class="skill-label">Backend & datos</span>
-        <div class="chips">
-          <span class="chip">Node.js</span>
-          <span class="chip">SQL</span>
-          <span class="chip">MySQL</span>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2>Stack</h2>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <span class="skill-label">Frontend</span>
+            <div class="chips">
+              <span class="chip">JavaScript</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">React</span>
+              <span class="chip">Angular</span>
+              <span class="chip">HTML/CSS</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">Backend & datos</span>
+            <div class="chips">
+              <span class="chip">Node.js</span>
+              <span class="chip">SQL</span>
+              <span class="chip">MySQL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">Testing & IA</span>
+            <div class="chips">
+              <span class="chip">Playwright</span>
+              <span class="chip">Postman</span>
+              <span class="chip">Claude</span>
+              <span class="chip">GitHub Copilot</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">Herramientas</span>
+            <div class="chips">
+              <span class="chip">Git / GitHub</span>
+              <span class="chip">Jira</span>
+              <span class="chip">Scrum</span>
+              <span class="chip">Trello</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="skill-group">
-        <span class="skill-label">Testing & IA</span>
-        <div class="chips">
-          <span class="chip">Playwright</span>
-          <span class="chip">Postman</span>
-          <span class="chip">Claude</span>
-          <span class="chip">GitHub Copilot</span>
+    </section>
+
+    <section id="formacion">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">03</span>
+          <h2>Formación</h2>
+        </div>
+        <div class="edu-list">
+          <div class="edu-item">
+            <span class="edu-inst">Universidad Tecnológica Nacional (UTN)</span>
+            <span class="edu-name"
+              >Programación — Formación universitaria en programación
+              adquiriendo sólidos conocimientos, estructuras de datos, bases de
+              datos, desarrollo frontend y backend, buenas prácticas de
+              codificación y trabajo en equipo en entornos colaborativos.</span
+            >
+          </div>
+          <div class="edu-item">
+            <span class="edu-inst">Rolling Code School</span>
+            <span class="edu-name"
+              >Programación Full Stack · Desarrollo frontend y backend con
+              JavaScript, React y MongoDB. Lógica de programación y consumo
+              asincrónico de APIs</span
+            >
+          </div>
+          <div class="edu-item">
+            <span class="edu-inst">Rolling Code School</span>
+            <span class="edu-name"
+              >QA Automation – Testing integral y automatización · Rolling Code
+              School Aseguramiento de Calidad de Software formación avanzada en
+              diseño de casos de prueba, automatización con Playwright y testing
+              de APIs</span
+            >
+          </div>
+          <div class="edu-item">
+            <span class="edu-inst">Henry</span>
+            <span class="edu-name"
+              >Full Stack Development Carrera potenciada con IA - HERY
+              (cursando) Desarrollo end-to-end: frontend, backend y bases de
+              datos construcción desde cero para entender cómo funciona la web,
+              enfoque builder mindset y aprendizaje project-based arquitectura y
+              despliegue en la nube</span
+            >
+          </div>
         </div>
       </div>
-      <div class="skill-group">
-        <span class="skill-label">Herramientas</span>
-        <div class="chips">
-          <span class="chip">Git / GitHub</span>
-          <span class="chip">Jira</span>
-          <span class="chip">Scrum</span>
+    </section>
+
+    <footer id="contacto">
+      <div class="wrap">
+        <div class="contact-title">Hablemos de tu próximo proyecto.</div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="k">EMAIL</span>
+            <a class="v" href="mailto:valentinafresiaa@hotmail.com"
+              >valentinafresiaa@hotmail.com</a
+            >
+          </div>
+          <div class="contact-item">
+            <span class="k">TELÉFONO</span>
+            <a class="v" href="tel:+543816595765">381 6 59-5765</a>
+          </div>
+          <div class="contact-item">
+            <span class="k">UBICACIÓN</span>
+            <span class="v">San Miguel de Tucumán, Argentina</span>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>© 2026 Valentina Fresia</span>
+          <div class="foot-socials">
+            <a
+              href="https://www.linkedin.com/in/valentina-fresia"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/valefresia"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="formacion">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">03</span>
-      <h2>Formación</h2>
-    </div>
-    <div class="edu-list">
-      <div class="edu-item">
-        <span class="edu-inst">UTN</span>
-        <span class="edu-name">Programación — estructuras de datos, frontend, backend y buenas prácticas</span>
-      </div>
-      <div class="edu-item">
-        <span class="edu-inst">Rolling Code School</span>
-        <span class="edu-name">Full Stack — JavaScript, React y MongoDB</span>
-      </div>
-      <div class="edu-item">
-        <span class="edu-inst">Rolling Code School</span>
-        <span class="edu-name">QA Automation — Playwright y testing de APIs</span>
-      </div>
-      <div class="edu-item">
-        <span class="edu-inst">Henry</span>
-        <span class="edu-name">Full Stack potenciada con IA — cursando</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer id="contacto">
-  <div class="wrap">
-    <div class="contact-title">Hablemos de tu próximo proyecto.</div>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <span class="k">EMAIL</span>
-        <a class="v" href="mailto:valentinafresiaa@hotmail.com">valentinafresiaa@hotmail.com</a>
-      </div>
-      <div class="contact-item">
-        <span class="k">TELÉFONO</span>
-        <a class="v" href="tel:+543816595765">381 6 59-5765</a>
-      </div>
-      <div class="contact-item">
-        <span class="k">UBICACIÓN</span>
-        <span class="v">San Miguel de Tucumán, Argentina</span>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Valentina Fresia</span>
-      <div class="foot-socials">
-        <a href="https://www.linkedin.com/in/valentina-fresia" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/valefresia" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>
