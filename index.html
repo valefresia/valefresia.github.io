@@ -322,6 +322,11 @@
           transform 0.2s ease,
           box-shadow 0.2s ease;
       }
+      .project-card:not(.placeholder) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+        column-gap: 28px;
+      }
       .project-card:hover {
         transform: translateY(-3px);
         box-shadow: 0 20px 40px -28px rgba(27, 39, 64, 0.45);
@@ -332,6 +337,12 @@
         align-items: flex-start;
         gap: 16px;
         flex-wrap: wrap;
+      }
+      .project-top,
+      .project-desc,
+      .project-tags,
+      .project-links {
+        grid-column: 1;
       }
       .project-title {
         font-family: "Fraunces", serif;
@@ -373,6 +384,40 @@
       }
       .project-links a:hover {
         color: var(--gold);
+      }
+      .project-preview {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+        min-height: 220px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--cream);
+        box-shadow: 0 10px 24px -20px rgba(27, 39, 64, 0.5);
+      }
+      .preview-bar {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0 10px;
+        background: var(--navy-deep);
+        border-bottom: 1px solid var(--navy);
+      }
+      .preview-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold-soft);
+        opacity: 0.8;
+      }
+      .preview-frame {
+        display: block;
+        width: 100%;
+        height: 192px;
+        border: 0;
+        background: var(--card);
+        pointer-events: none;
       }
 
       .project-card.placeholder {
@@ -487,6 +532,15 @@
           white-space: normal;
           max-width: 100%;
         }
+        .project-card:not(.placeholder) {
+          grid-template-columns: 1fr;
+          row-gap: 0;
+        }
+        .project-preview {
+          grid-column: 1;
+          grid-row: auto;
+          margin-top: 22px;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -572,6 +626,12 @@
               <span class="tag">CSS</span>
               <span class="tag">JavaScript</span>
             </div>
+            <div class="project-preview" aria-label="Vista previa de Colorfly Studio">
+              <div class="preview-bar">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <iframe class="preview-frame" src="https://valefresia.github.io/ProyectoM1_valentinaFresia-/" title="Vista previa de Colorfly Studio" loading="lazy" tabindex="-1"></iframe>
+            </div>
             <div class="project-links">
               <a
                 href="https://valefresia.github.io/ProyectoM1_valentinaFresia-/"
@@ -604,6 +664,12 @@
               <span class="tag">SQL</span>
               <span class="tag">Swagger</span>
             </div>
+            <div class="project-preview" aria-label="Vista previa de la API REST documentada con Swagger">
+              <div class="preview-bar">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <iframe class="preview-frame" src="https://proyectom2valentinafresia-production.up.railway.app/api-docs/" title="Vista previa de la documentación Swagger" loading="lazy" tabindex="-1"></iframe>
+            </div>
             <div class="project-links">
               <a
                 href="https://proyectom2valentinafresia-production.up.railway.app/api-docs/"
@@ -629,6 +695,12 @@
               <span class="tag">Vercel Functions</span>
               <span class="tag">Gemini AI</span>
               <span class="tag">Vitest</span>
+            </div>
+            <div class="project-preview" aria-label="Vista previa del chat con Mickey Mouse">
+              <div class="preview-bar">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <iframe class="preview-frame" src="https://proyecto-m3-valentina-fresiaa.vercel.app/" title="Vista previa del chat con Mickey Mouse" loading="lazy" tabindex="-1"></iframe>
             </div>
             <div class="project-links">
               <a
@@ -659,6 +731,12 @@
               <span class="tag">JavaScript</span>
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
+            </div>
+            <div class="project-preview" aria-label="Vista previa de Nueva Italia Eventos">
+              <div class="preview-bar">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <iframe class="preview-frame" src="https://nueva-italia-eventos.vercel.app/" title="Vista previa de Nueva Italia Eventos" loading="lazy" tabindex="-1"></iframe>
             </div>
             <div class="project-links">
               <a
