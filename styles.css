@@ -305,6 +305,11 @@
           transform 0.2s ease,
           box-shadow 0.2s ease;
       }
+      .project-card:not(.placeholder) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+        column-gap: 28px;
+      }
       .project-card:hover {
         transform: translateY(-3px);
         box-shadow: 0 20px 40px -28px rgba(27, 39, 64, 0.45);
@@ -315,6 +320,12 @@
         align-items: flex-start;
         gap: 16px;
         flex-wrap: wrap;
+      }
+      .project-top,
+      .project-desc,
+      .project-tags,
+      .project-links {
+        grid-column: 1;
       }
       .project-title {
         font-family: "Fraunces", serif;
@@ -356,6 +367,40 @@
       }
       .project-links a:hover {
         color: var(--gold);
+      }
+      .project-preview {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+        min-height: 220px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--cream);
+        box-shadow: 0 10px 24px -20px rgba(27, 39, 64, 0.5);
+      }
+      .preview-bar {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0 10px;
+        background: var(--navy-deep);
+        border-bottom: 1px solid var(--navy);
+      }
+      .preview-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold-soft);
+        opacity: 0.8;
+      }
+      .preview-frame {
+        display: block;
+        width: 100%;
+        height: 192px;
+        border: 0;
+        background: var(--card);
+        pointer-events: none;
       }
 
       .project-card.placeholder {
@@ -469,6 +514,15 @@
         .terminal {
           white-space: normal;
           max-width: 100%;
+        }
+        .project-card:not(.placeholder) {
+          grid-template-columns: 1fr;
+          row-gap: 0;
+        }
+        .project-preview {
+          grid-column: 1;
+          grid-row: auto;
+          margin-top: 22px;
         }
       }
 
