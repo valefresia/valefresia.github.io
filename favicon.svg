@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">VF</title>
+  <desc id="desc">Monograma VF de Valentina Fresia</desc>
+  <rect width="64" height="64" rx="18" fill="#0b1733"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="none" stroke="#51a8ff" stroke-opacity=".8" stroke-width="2"/>
+  <path d="M15 20h7l5.5 16.5L33 20h7L29.5 45h-4z" fill="#dfe9ff"/>
+  <path d="M38 20h13v5h-7v5h6v5h-6v10h-6z" fill="#51a8ff"/>
+</svg>
